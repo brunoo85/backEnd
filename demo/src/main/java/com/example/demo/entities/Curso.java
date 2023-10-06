@@ -18,9 +18,4 @@ public class Curso {
 
      @Column(nullable = false)
      private String nome;
-
-     @Override
-     public String toString(){
-          return "{id="+id+", nome="+nome+"}";
-     }
 }

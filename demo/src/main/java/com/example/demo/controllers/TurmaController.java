@@ -10,34 +10,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entities.Curso;
-import com.example.demo.services.CursoService;
+import com.example.demo.entities.Turma;
+import com.example.demo.services.TurmaService;
 
 @RestController
-@RequestMapping("/curso")
-public class CursoController {
+@RequestMapping("/turma")
+public class TurmaController {
      
      @Autowired
-     CursoService cursoService;
+     TurmaService turmaService;
 
-     @GetMapping("/{idCurso}")
-     public Curso getCurso(@PathVariable Integer idCurso){
-          Curso curso = cursoService.getCurso(idCurso);
-          return curso;
+     @GetMapping("/{idTurma}")
+     public Turma getTurma(@PathVariable Integer idTurma){
+          Turma turma = turmaService.getTurma(idTurma);
+          return turma;
      }
 
      @PostMapping
-     public void cadastrarCurso (@RequestBody Curso curso){
-          cursoService.salvar(curso);
+     public void cadastrarTurma (@RequestBody Turma turma){
+          turmaService.salvar(turma);
      }
 
      @PutMapping
-     public void atualizarCurso(@RequestBody Curso curso){
-          cursoService.atualizar(curso);
+     public void atualizarTurma(@RequestBody Turma turma){
+          turmaService.atualizar(turma);
      }
 
-     @DeleteMapping("/{idCurso}")
-     public void removerCurso(@PathVariable Integer idCurso){
-          cursoService.remover(idCurso);
+     @DeleteMapping("/{idTurma}")
+     public void removerTurma(@PathVariable Integer idTurma){
+          turmaService.remover(idTurma);
      }
+
 }
